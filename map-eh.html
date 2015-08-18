@@ -13,7 +13,7 @@
         height: 300px;
       }
     </style>
-    <google-map fit-to-markers latitude="{{lat}}" longitude="{{lng}}" hidden$="{{!showMap(output)}}" map="{{map}}" id="map">
+    <google-map zoom="{{zoom}}" latitude="{{lat}}" longitude="{{lng}}" hidden$="{{!showMap(output)}}" map="{{map}}" id="map">
       <template is="dom-repeat" items="{{output}}" as="marker">
         <google-map-marker icon="[[marker.type]].svg" longitude="[[LatLngTolongitude(marker.LatLng)]]" latitude="[[LatLngTolatitude(marker.LatLng)]]" title="[[marker.value]]" >
           <a href="[[marker.url]]" rel="external">
@@ -52,8 +52,9 @@
         },
         lat:String,
         lng:String,
+        zoom:String,
         hash: {
-          // computed: 'get_hash(lat, lng)' //todo 
+          // computed: 'get_hash(lat, lng)' //todo debounce
           type:String
         }
       },
