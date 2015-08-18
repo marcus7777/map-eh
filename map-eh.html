@@ -33,7 +33,7 @@ if ($maps_active == 'on')
         height: 300px;
       }
     </style>
-    <google-map zoom="{{_zoom}}" latitude="{{lat}}" longitude="{{lng}}" map="{{map}}" id="map">
+    <google-map zoom="{{zoom}}" latitude="{{lat}}" longitude="{{lng}}" map="{{map}}" id="map">
       <template is="dom-repeat" items="{{output}}" as="marker">
         <google-map-marker icon="[[marker.type]].svg" longitude="[[LatLngTolongitude(marker.LatLng)]]" latitude="[[LatLngTolatitude(marker.LatLng)]]" title="[[marker.value]]" >
           <a href="[[marker.url]]" rel="external">
@@ -72,9 +72,7 @@ if ($maps_active == 'on')
         },
         lat:String,
         lng:String,
-        zoom:String,
-        _zoom:String,
-        
+        zoom:Number,
         hash: {
           // computed: 'get_hash(lat, lng)' //todo debounce
           type:String
@@ -103,17 +101,15 @@ if ($maps_active == 'on')
       },
       ready: function() {
         this.hash = this.get_hash(this.lat, this.lng);
-        this._zoom = this.zoom;
         
         setInterval(function() {       
           var map = document.querySelectorAll('google-map');
           if (map.length > 0) {
-            map[0].resize();
+  //          map[0].resize();
           }
           if (map.length > 1) {
-            map[1].resize();
+  //          map[1].resize();
           } // TODO smelly
-          this.is_ready = true;
         },3000)
       }
     });
