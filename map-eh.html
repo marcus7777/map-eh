@@ -2,7 +2,19 @@
 <link rel="import" href="../geohash-js/geohash-js.html">
 <link rel="import" href="../get-geo-data/get-geo-data.html">
 <link rel="import" href="../google-map/google-map.html">
-
+<!-- <div class="map"> <?php
+    $long = get_post_meta($post->ID, 'woo_maps_long', true);
+    $lat = get_post_meta($post->ID, 'woo_maps_lat', true);
+    $zoom = get_post_meta($post->ID, 'woo_maps_zoom', true);
+    if (!empty($lat))
+    {
+    
+      ?><map-eh lat="<?php echo $lat ?>" lng="<?php echo $long ?>" zoom="<?php echo $zoom ?>">
+      </map-eh> <?php
+    
+    }
+  ?>   </div>
+-->
 <dom-module id="map-eh">
   <template>
     <style>
