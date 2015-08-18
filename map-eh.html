@@ -13,7 +13,7 @@
         height: 300px;
       }
     </style>
-    <google-map hidden$="{{!showMap(output)}}" map="{{map}}" id="map">
+    <google-map latitude="{{lat}}" longitude="{{lng}}" hidden$="{{!showMap(output)}}" map="{{map}}" id="map">
       <template is="dom-repeat" items="{{output}}" as="marker">
         <google-map-marker icon="[[marker.type]].svg" longitude="[[LatLngTolongitude(marker.LatLng)]]" latitude="[[LatLngTolatitude(marker.LatLng)]]" title="[[marker.value]]" >
           <a href="[[marker.url]]" rel="external">
