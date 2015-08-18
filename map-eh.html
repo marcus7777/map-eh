@@ -1,22 +1,18 @@
 <link rel="import" href="../get-hash/get-hash.html">
 <link rel="import" href="../geohash-js/geohash-js.html">
-<link rel="import" href="../lunr-js/lunr-js.html">
+<link rel="import" href="../get-geo-data/get-geo-data.html">
 <link rel="import" href="../google-map/google-map.html">
 
 <dom-module id="map-eh">
-  <style>
-    :host {
-      display: block;
-      background-color: #faebd7;
-      font-family: Roboto, Helvetica, sans-serif;
-      font-weight: 300;
-    }
-    google-map {
-      height: 300px;
-    }
-  </style>
-  
   <template>
+    <style>
+      :host {
+        display: block;
+      }
+      google-map {
+        height: 300px;
+      }
+    </style>
     <google-map hidden$="{{!showMap(output)}}" map="{{map}}" id="map">
       <template is="dom-repeat" items="{{output}}" as="marker">
         <google-map-marker icon="[[marker.type]].svg" longitude="[[LatLngTolongitude(marker.LatLng)]]" latitude="[[LatLngTolatitude(marker.LatLng)]]" title="[[marker.value]]" >
