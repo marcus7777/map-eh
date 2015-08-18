@@ -79,7 +79,7 @@
         return cdn + url;
       },
       ready: function() {
-        this.hash = get_hash(lat, lng);
+        this.hash = this.get_hash(this.lat, this.lng);
         
         setInterval(function() {       
           var map = document.querySelectorAll('google-map');
