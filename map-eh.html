@@ -40,6 +40,10 @@
           type: Array,
           computed: 'byCenter(data,hash,100)'
         },
+        input:{
+          type:String,
+          value:"/index.json"
+        }
         map: Object,
         data:{
           type:Array
@@ -48,9 +52,6 @@
         lng:String,
         hash: {
           computed: 'get_hash(lat, lng)'
-        },
-        output_for_search: {
-          type:Array
         }
       },
       get_hash: function(lat, lng) {
