@@ -18,7 +18,7 @@
     "get-hash": "Marcus7777/get-hash",
     "geohash-js": "Marcus7777/geohash-js",
     "get-geo-data": "Marcus7777/get-geo-data",
-    "google-map": "*"
+    "google-map": "GoogleWebComponents/google-map"
   },
   "license": "MIT",
   "ignore": [
