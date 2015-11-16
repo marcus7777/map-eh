@@ -14,7 +14,11 @@
     "wordpress"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.0.0"
+    "polymer": "Polymer/polymer#^1.0.0",
+    "get-hash": "Marcus7777/get-hash",
+    "geohash-js": "Marcus7777/geohash-js",
+    "get-geo-data": "Marcus7777/get-geo-data",
+    "google-map": "*"
   },
   "license": "MIT",
   "ignore": [
